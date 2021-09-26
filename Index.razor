@@ -1,0 +1,82 @@
+﻿@page "/"
+<div>
+    <h1>BillBoard Movies</h1>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+    <div class="col">
+        <div class="card mb-3 h-100" styles="width: 18mm;">
+            <img class="card-img-top" src="/Images/IT.jpg" alt="..." height="250" width="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@MovieTitle1</em></h5> 
+                
+                <a href="#" class="btn btn-primay">Watch Movie</a>            
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-3 h-100" styles="width: 18mm;">
+            <img class="card-img-top" src="/Images/BlackWidow.jpg" alt="..." height="250" width="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@MovieTitle2</em></h5> 
+                
+                <a href="#" class="btn btn-primay">Watch Movie</a>            
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-3 h-100" styles="width: 18mm;">
+            <img class="card-img-top" src="/Images/LosIncreibles.jpg" alt="..." height="250" width="250">
+            <div class="card-body">
+                <h5 class="card-title"><em>@MovieTitle3</em></h5> 
+                
+                <a href="#" class="btn btn-primay">Watch Movie</a>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <input class="form-control form-control-sm" type="text" placeholder="Movie">
+</div>
+<div class="mb-3">
+    <input class="form-control form-control-sm" type="text" placeholder="Gender">
+</div>
+<div class="mb-3">
+    <input type="file" name="" id="" class="form-control">
+</div>
+<div>
+    <label class="form-label">Movie 1 @function_convert_mayusc(MovieTitle1)</label>
+    <label class="form-label">Movie 1 @function_convert_mayusc(MovieTitle2)</label>
+</div>
+<div>
+    <button class="btn btn-info" @onclick="clic_event_button">Click</button>
+    <button class="btn btn-danger" @onclick="clic_event_cancel">Cancel</button>
+</div>
+
+@code{
+
+    @*IT*@
+    public string MovieTitle1="IT";
+    public string MovieTitle2="Black Widiow";
+    public string MovieTitle3="The Incredibles";
+    public string MovieTitle4="Shang-Chi And The Legend Of The Ten Rings.";
+    public string MovieTitle5="Little Q";
+    public string MovieTitle6="The comeback Trail";
+    public string MovieTitle7="Miss Revolution"; 
+    public string MovieTitle8="The Ice Road";
+    public string MovieTitle10="Ron’s Gone Wrong";
+    public string MovieTitle11="No Time to Die";
+    public string MovieTitle12="Un divan à Tunis";
+
+    public string function_convert_mayusc(string value) => value.ToUpper();
+    public string function_convert_minusc(string value) => value.ToLower();
+
+    public void clic_event_button()
+    {
+        Console.WriteLine("You had been clicl on button");
+    }
+
+    public void clic_event_cancel()
+    {
+        Console.WriteLine("You canceled the process");
+    }
+}
